@@ -1,0 +1,328 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+ 
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+ 
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+ 
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+ 
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+ 
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+ 
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+ 
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+ 
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+ 
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+ 
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+ 
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@media (prefers-color-scheme: dark) {
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    /* Largura da barra de rolagem */
+  }
+
+  /* Estilizando o thumb (botão de rolagem) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #6B7280;
+    /* Cor do thumb */
+    border-radius: 20px;
+    /* Borda arredondada do thumb */
+  }
+
+  /* Estilizando a área onde o thumb se move */
+  ::-webkit-scrollbar-track {
+    background-color: #4B5563;
+    /* Cor da área de rolagem */
+  }
+
+  .bgsvg {
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+.bgsvg {
+
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* CSS */
+
+.bgsvg2 {
+
+  /* Cor de fundo do bgsvg */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+
+/* RainEffect.css */
+/* RainEffect.css */
+.rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Para permitir que o conteúdo da seção fique clicável */
+}
+
+.rain {
+  font-size: 20px;
+  position: absolute;
+  animation: rain 0.5s linear infinite;
+  user-select: none;
+}
+
+@keyframes rain {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Espaçamento vertical entre as letras */
+.rain:nth-child(odd) {
+  margin-top: 5px;
+}
+
+/* Rotação aleatória */
+.rain:nth-child(even) {
+  transform: rotate(10deg);
+}
+
+/* Desaparecimento suave */
+@keyframes opacity-fade {
+  0% {
+    opacity: .75;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+.opacity-fade {
+  animation: cubic-bezier(0.19, 1, 0.22, 1) 0.5s opacity-fade;
+}
+
+
+
+/* SeuComponente.css */
+
+.glow:hover {
+  background-color: #fca311;
+  box-shadow: 0 0 10px rgba(252, 163, 17, 0.8);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cards__card.glow:hover {
+  background-color: #fca311;
+  box-shadow: 0 0 10px rgba(252, 163, 17, 0.8);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+
+
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, 64px);
+  grid-template-rows: repeat(10, 64px);
+  grid-gap: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.element {
+
+  border: 2px solid #aaa;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.element:hover {
+  transform: scale(1.25, 1.25);
+  z-index: 1;
+  filter: drop-shadow(0px 8px 10px #0000006e);
+  transition: ease-in-out;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+
+}
+
+.element .number {
+  font-size: 8px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.element .name {
+  font-size: 8px;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+.periodictableheading {
+  text-align: center;
+  padding: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+}
+
+
+
+/* styles.css */
+
+/* Estilos para tamanhos de cabeçalho usando Tailwind CSS classes */
+/* Este é o código CSS que você pode adicionar ao seu projeto com Tailwind CSS configurado. */
+
+/* Classe para estilizar o componente de barra de progresso circular */
+
+
+
+
+
+.chatresponse h1 {
+  @apply text-2xl font-bold my-4 mb-4;
+}
+
+.chatresponse h2 {
+  @apply text-xl font-semibold my-4 mb-4;
+}
+
+.chatresponse h3 {
+  @apply text-lg font-semibold my-4 mb-4;
+}
+
+.chatresponse h4 {
+  @apply text-base font-semibold my-4 mb-4;
+}
+
+.chatresponse h5 {
+  @apply text-sm font-semibold my-4 mb-4;
+}
+
+.chatresponse h6 {
+  @apply text-xs font-semibold my-4 mb-4;
+}
+
+/* Estilos para listas não ordenadas (ul) e itens de lista (li) usando Tailwind CSS classes */
+.chatresponse ul {
+  @apply list-disc list-inside my-4 mr-2;
+
+}
+
+.chatresponse li {
+  @apply ml-8 mt-0 mb-2;
+}
+
+.chatresponse img {
+  @apply mx-auto rounded-md my-4;
+}
+
+.chatresponse p {
+  @apply text-justify;
+}
+
+.chatresponse strong {
+  @apply bg-white/25 border border-white/50 rounded-sm font-bold px-1;
+}
+
+.chatresponse u {
+  @apply italic;
+}
+
+::selection {
+  @apply bg-red-400/50
+}
+
+.chatresponse blockquote {
+  @apply ml-4 my-4 italic underline decoration-white underline-offset-8 p-4 bg-white/10 border border-white/25 rounded-md w-fit
+}
+
+.chatresponse a {
+  @apply text-blue-400 hover:underline
+}
+
+.chatresponse p {
+  @apply my-4 text-justify
+}
+
+.chatresponse ol {
+  @apply list-inside my-4 mr-2
+}
