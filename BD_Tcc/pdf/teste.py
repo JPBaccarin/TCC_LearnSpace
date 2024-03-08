@@ -2,6 +2,7 @@ import PyPDF2
 import json
 import re
 
+
 def extrairQuestoesENEM(caminho_arquivo):
     questoes_enem = []
     questao_id = 1  # Inicialize o ID da questão
@@ -20,19 +21,20 @@ def extrairQuestoesENEM(caminho_arquivo):
                 if questao_info:
                     questoes_enem.append(questao_info)
                     questao_id += 1  # Incremente o ID da questão
-        
+
     return questoes_enem
+
 
 def extrairInfoQuestao(questao_text, questao_id):
     info = {"id": questao_id}  # Adicione o ID da questão ao dicionário
     lines = [line.strip() for line in questao_text.split('\n') if line.strip()]
-    
+
     if len(lines) >= 6:
         # Encontra o número da questão
         match = re.match(r'^\d+', lines[0])
         if match:
             info["numero_questao"] = int(match.group(0))
-        
+
         # Inicialização das variáveis do enunciado e dos parágrafos
         enunciado_atual = ""
         paragrafos_enunciado = []
@@ -47,14 +49,14 @@ def extrairInfoQuestao(questao_text, questao_id):
                     paragrafos_enunciado.append(enunciado_atual)
                 enunciado_atual = linha
             else:
-                enunciado_atual += "\n" + linha
+                enunciado_atual += " " + linha
 
         # Certifique-se de adicionar o último parágrafo do enunciado, se houver
         if enunciado_atual:
             paragrafos_enunciado.append(enunciado_atual)
 
-        info["enunciado"] = "\n".join(paragrafos_enunciado)
-        
+        info["enunciado"] = " ".join(paragrafos_enunciado)
+
         # Encontra as opções de resposta e a resposta correta
         opcoes_resposta = []
         resposta_correta = None
@@ -65,21 +67,23 @@ def extrairInfoQuestao(questao_text, questao_id):
                 if resposta_correta is None:
                     resposta_correta = match_opcao.group(0)
                 opcoes_resposta.append(linha)
-        
+
         info["opcoes_resposta"] = opcoes_resposta
         info["resposta_correta"] = resposta_correta
-    
+
     info["categoria"] = classificarQuestao(info.get("enunciado", ""))
     info["vestibular"] = "ENEM"
     return info
+
 
 def classificarQuestao(enunciado):
     # Adapte ou expanda a função classificarQuestao conforme necessário
     # Por padrão, retorna 'Desconhecido'
     return 'Desconhecido'
 
+
 # Caminho do arquivo PDF do ENEM
-caminho_arquivo = "enem_2020__dia_1.pdf"
+caminho_arquivo = "BD_Tcc/pdf/enem_2020__dia_1.pdf"
 
 # Extrair questões do PDF do ENEM
 questoes_enem = extrairQuestoesENEM(caminho_arquivo)

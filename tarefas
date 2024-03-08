@@ -1,0 +1,32 @@
+func 1 : extrair questoes enem:
+
+    * arrumar o codigo python  para a limpeza de questoes (alternativas/respostas (func principal/geral))
+        - fazer testes e analisar o erro
+        - arrumar categoria por materias
+        - arrumar o codigo, limpeza e refatoracao
+
+        leo, pinas, alessandro, 
+
+    * funcao adicionar repostas corretas extraidas do caderno de respostas
+        - analisar como o caderno   e separado
+        - adicionar a funcao dentro da funcao principal
+        - fazer testes, arrumar, refatorar
+
+        rafa, jao 
+
+    * funcao adicionar imagens ligadas a questao 
+        - analisar como a imagem e destribuida a cada questao 
+        - adicionar na func principal 
+        - criar uma pasta para cada imagem com base no id da questao e ano do caderno
+            -ex: ` enem 2021/ qest2/ imagem.png` 
+        -testes refatoracao
+        
+        gustavo, jao 
+
+
+    etapas: 
+    1 - pesquisa de como pode funcionar 
+    2 - codar/testar
+
+
+    * teste final  
