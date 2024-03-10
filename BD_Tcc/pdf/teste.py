@@ -1,29 +1,49 @@
 import PyPDF2
-import json
 import re
+import json
+from pikepdf import Pdf, PdfImage
+
+def extrairImagensDoPDF(caminho_arquivo):
+    imagens = []
+
+    with Pdf.open(caminho_arquivo) as pdf:
+        for pagina in pdf.pages:
+            for imagem_ref in pagina.images.keys():
+                imagem = pagina.images[imagem_ref]
+                if isinstance(imagem, PdfImage):
+                    imagens.append(imagem)
+
+    return imagens
 
 
 def extrairQuestoesENEM(caminho_arquivo):
     questoes_enem = []
     questao_id = 1  # Inicialize o ID da questão
 
+    imagens_pdf = extrairImagensDoPDF(caminho_arquivo)
+
     with open(caminho_arquivo, 'rb') as arquivo:
         pdf_reader = PyPDF2.PdfReader(arquivo)
         num_paginas = len(pdf_reader.pages)
 
-        for pagina in range(num_paginas):
-            pagina_pdf = pdf_reader.pages[pagina]
+        for pagina_num in range(num_paginas):
+            pagina_pdf = pdf_reader.pages[pagina_num]
             texto_pagina = pagina_pdf.extract_text()
             questoes = re.split(r'Questão\s+\d+', texto_pagina)[1:]
 
             for questao_text in questoes:
                 questao_info = extrairInfoQuestao(questao_text, questao_id)
                 if questao_info:
+                    # Adiciona informações da imagem à questão
+                    if len(imagens_pdf) > pagina_num:
+                        questao_info["imagem"] = imagens_pdf[pagina_num].as_base64()
+
                     questoes_enem.append(questao_info)
-                    questao_id += 1  # Incremente o ID da questão
+                    questao_id += 1  # Incrementa o ID da questão
 
     return questoes_enem
 
+    
 
 def extrairInfoQuestao(questao_text, questao_id):
     info = {"id": questao_id}  # Adicione o ID da questão ao dicionário
