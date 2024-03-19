@@ -1,14 +1,8 @@
-import type { Config } from "tailwindcss"
-const heropatterns = require("tailwindcss-hero-patterns/src/patterns");
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -17,9 +11,6 @@ const config = {
       screens: {
         "2xl": "1400px",
       },
-    },
-    heroPatterns: {
-      architect: heropatterns.architect,
     },
     extend: {
       colors: {
@@ -76,10 +67,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
