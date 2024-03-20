@@ -51,8 +51,8 @@ const FAQSection: React.FC = () => {
       <Accordion type="single" collapsible className="container">
         {faqData.map((item, index) => (
           <AccordionItem key={index} value={`item-${index}`} onChange={() => toggleQuestion(index)}>
-            <AccordionTrigger>{item.question}</AccordionTrigger>
-            <AccordionContent>{item.answer}</AccordionContent>
+            <AccordionTrigger className="text-lg font-semibold">{item.question}</AccordionTrigger>
+            <AccordionContent className="text-md">{item.answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

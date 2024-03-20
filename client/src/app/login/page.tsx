@@ -22,7 +22,7 @@ const formSchema = z.object({
   }),
 })
 
-export function ProfileForm() {
+function ProfileForm() {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -49,6 +49,7 @@ export function ProfileForm() {
               <FormLabel>Username</FormLabel>
               <FormControl>
                 <Input placeholder="shadcn" {...field} />
+                
               </FormControl>
               <FormDescription>
                 This is your public display name.
@@ -61,5 +62,6 @@ export function ProfileForm() {
       </form>
     </Form>
   )
-}
+}   export default ProfileForm
+
 
