@@ -1,6 +1,7 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "../ui/button";
 
 type FilterType = {
   categoria: string;
@@ -46,10 +47,10 @@ const FilterQ: React.FC<Props> = ({ onFilterChange }) => {
 
   const renderDropdown = (label: string, value: string, setter: React.Dispatch<string>, options: string[]) => (
     <div>
-      <label>{label}:</label>
+      <label className="text-sm font-bold">{label}:</label>
       <Select>
-        <SelectTrigger>
-        <SelectValue></SelectValue>
+        <SelectTrigger className="mt-2">
+          <SelectValue></SelectValue>
         </SelectTrigger>
         <SelectContent>
           {options.map((option) => (
@@ -73,10 +74,9 @@ const FilterQ: React.FC<Props> = ({ onFilterChange }) => {
   ];
 
   return (
-    <div>
-      <h2>Filters</h2>
+    <div className="flex flex-row gap-10 flex-wrap items-center p-5 border  rounded-md bg-background ">
       {filterData.map(({ label, value, setter, options }) => renderDropdown(label, value, setter, options))}
-      <button onClick={applyFilters}>Aplicar Filtros</button>
+      <Button onClick={applyFilters}>Aplicar Filtros</Button>
     </div>
   );
 };
