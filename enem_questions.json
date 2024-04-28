@@ -11,7 +11,13 @@
         ],
         "resposta_correta": "A  ",
         "categoria": "Desconhecido",
-        "vestibular": "ENEM"
+        "vestibular": "ENEM",
+        "disciplina": "matemática",
+        "Conteudo": "lógica",
+        "tópico": "",
+        "dificuldade": "fácil",
+        "ano": "2002"
+
     },
     {
         "id": 2,
