@@ -29,5 +29,11 @@ Este repositório contém o código fonte e os recursos relacionados ao Trabalho
   - Bibliotecas de processamento de linguagem natural (NLP)
   - Bibliotecas de tradução de idiomas (por exemplo, Google Translate API)
 
-
+## Desenvolvedores: 
+https://github.com/JPBaccarin
+https://github.com/padreqvedo
+https://github.com/PedroH2OO
+https://github.com/Slgdo
+https://github.com/GuBortolin
+https://github.com/AlessandroCruz-01
 
