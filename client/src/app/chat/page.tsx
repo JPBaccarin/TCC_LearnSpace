@@ -6,7 +6,7 @@ export const runtime = "edge";
 
 import React from "react";
 
-function page() {
+function Chatp() {
   return (
     <div className="p-2 flex items-center justify-center h-full bgsvg bg-gray-900 min-h-screen bgsvg text-justify">
       <Chat />
@@ -14,4 +14,4 @@ function page() {
   );
 }
 
-export default page;
+export default Chatp;
