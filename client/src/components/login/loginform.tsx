@@ -5,50 +5,39 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import React, { SyntheticEvent, useState } from "react";
+import Link from "next/link";
 
 const formSchema = z.object({
-  username: z.string().min(5, {
-    message: "Username must be at least 5 characters.",
+  email: z.string().min(1, {
+    message: "O campo é obrigatório.",
   }),
-  password: z.string().min(5, {
-    message: "Password tem que ter pelo menos 5 caracteres",
+  password: z.string().min(1, {
+    message: "O campo é obrigatório.",
   }),
 });
 
 export function Loginform() {
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
-
-  const router = useRouter()
-
-  async function handleSubmit(event: SyntheticEvent){
-    event.preventDefault()
-
-    const result = await signIn('credentials', {
-      email,
-      password,
-      redirect: false
-    })
-
-    if (result?.error){
-      console.log(result)
-      return
-    }
-
-    router.replace('/admin')
-  }
+  const router = useRouter();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
@@ -62,18 +51,21 @@ export function Loginform() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="  space-y-4 rounded-md border p-4"
+      >
         <FormField
           control={form.control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <FormItem>
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="username"  type='text' {...field} onChange={(e) => setEmail(e.target.value)} />
+                  <Input placeholder="email" type="text" {...field} />
                 </FormControl>
-                <FormDescription>This is your public display name.</FormDescription>
+                <FormDescription>Digite seu email.</FormDescription>
                 <FormMessage />
               </FormItem>
             </FormItem>
@@ -81,23 +73,31 @@ export function Loginform() {
         />
 
         <FormField
-          control={form.control}       
-          name="password"  
+          control={form.control}
+          name="password"
           render={({ field }) => (
             <FormItem>
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Senha</FormLabel>
                 <FormControl>
-                  <Input placeholder="password" type='password' {...field} onChange={(p) => setPassword(p.target.value)} />
+                  <Input placeholder="senha" type="password" {...field} />
                 </FormControl>
-                <FormDescription>This is your public display password.</FormDescription>
+                <FormDescription>Digite sua senha.</FormDescription>
                 <FormMessage />
               </FormItem>
             </FormItem>
           )}
         />
-
-        <Button type="submit">Submit</Button>
+        <div className="space-y-4">
+          <Button type="submit">entrar</Button>{" "}
+          <div className="flex flex-row text-sm text-muted-foreground">
+            <p className="mr-2 ">não possui uma conta?</p>
+            <Link href={"//"} className="text-sm text-primary/50 underline">
+              {" "}
+              cadastre-se
+            </Link>
+          </div>
+        </div>
       </form>
     </Form>
   );

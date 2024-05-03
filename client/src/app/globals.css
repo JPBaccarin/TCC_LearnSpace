@@ -1,79 +1,102 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
- 
-    --primary: 220.9 39.3% 11%;
-    --primary-foreground: 210 20% 98%;
- 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
- 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
- 
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-      /* Name: custom color palette
-         Author: Ilias Ism
-         URL: https://gradient.page */
-  
-      /* CSS: .bg-gradient { background: var(--gradient) } */
-      --gradient: #F94444;
-  
-      --background: 0 61.099999999999994% 4.96%;
-      --foreground: 0 9.399999999999999% 98.1%;
-  
-      --muted: 0 53.58% 17.98%;
-      --muted-foreground: 0 9.399999999999999% 56.2%;
-  
-      --popover: 0 46.2% 8.06%;
-      --popover-foreground: 0 9.399999999999999% 98.1%;
-  
-      --card: 0 46.2% 8.06%;
-      --card-foreground: 0 9.399999999999999% 98.1%;
-  
-      --border: 0 53.58% 17.98%;
-      --input: 0 53.58% 17.98%;
-  
+  @layer base {
+    /*:root {
+      --background: 0 50% 98%;
+      --foreground: 0 51% 0%;
+      --muted: 0 6% 89%;
+      --muted-foreground: 0 12% 37%;
+      --popover: 0 50% 98%;
+      --popover-foreground: 0 51% 0%;
+      --card: 0 50% 98%;
+      --card-foreground: 0 51% 0%;
+      --border: 0 3% 90%;
+      --input: 0 3% 90%;
       --primary: 0 94% 62%;
-      --primary-foreground: 0 9.399999999999999% 6.2%;
-  
-      --secondary: 0 53.58% 17.98%;
-      --secondary-foreground: 0 9.399999999999999% 98.1%;
-  
-      --accent: 0 53.58% 17.98%;
-      --accent-foreground: 0 9.399999999999999% 98.1%;
-  
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 9.399999999999999% 98.1%;
-  
+      --primary-foreground: 0 0% 100%;
+      --secondary: 0 7% 80%;
+      --secondary-foreground: 0 7% 20%;
+      --accent: 0 16% 71%;
+      --accent-foreground: 0 16% 11%;
+      --destructive: 3 99% 23%;
+      --destructive-foreground: 3 99% 83%;
       --ring: 0 94% 62%;
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 0 49% 1%;
+      --foreground: 0 25% 100%;
+      --muted: 0 6% 11%;
+      --muted-foreground: 0 12% 63%;
+      --popover: 0 49% 1%;
+      --popover-foreground: 0 25% 100%;
+      --card: 0 49% 1%;
+      --card-foreground: 0 25% 100%;
+      --border: 0 3% 14%;
+      --input: 0 3% 14%;
+      --primary: 0 94% 62%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 0 0% 11%;
+      --secondary-foreground: 0 0% 71%;
+      --accent: 0 6% 21%;
+      --accent-foreground: 0 6% 81%;
+      --destructive: 3 99% 47%;
+      --destructive-foreground: 0 0% 100%;
+      --ring: 0 94% 62%;
+    }*/
+    @layer base {
+      :root {
+        --background: 0 50% 98%;
+        --foreground: 0 51% 0%;
+        --muted: 0 6% 89%;
+        --muted-foreground: 0 12% 37%;
+        --popover: 0 50% 98%;
+        --popover-foreground: 0 51% 0%;
+        --card: 0 50% 98%;
+        --card-foreground: 0 51% 0%;
+        --border: 0 3% 90%;
+        --input: 0 3% 90%;
+        --primary: 0 94% 62%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 7% 80%;
+        --secondary-foreground: 0 7% 20%;
+        --accent: 0 16% 71%;
+        --accent-foreground: 0 16% 11%;
+        --destructive: 3 99% 23%;
+        --destructive-foreground: 3 99% 83%;
+        --ring: 0 94% 62%;
+        --radius: 0.5rem;
+      }
+
+      .dark {
+        --background: 0 49% 1%;
+        --foreground: 0 25% 100%;
+        --muted: 0 6% 11%;
+        --muted-foreground: 0 12% 63%;
+        --popover: 0 49% 1%;
+        --popover-foreground: 0 25% 100%;
+        --card: 0 49% 1%;
+        --card-foreground: 0 25% 100%;
+        --border: 0 3% 14%;
+        --input: 0 3% 14%;
+        --primary: 0 94% 62%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 11%;
+        --secondary-foreground: 0 0% 71%;
+        --accent: 0 6% 21%;
+        --accent-foreground: 0 6% 81%;
+        --destructive: 3 99% 47%;
+        --destructive-foreground: 0 0% 100%;
+        --ring: 0 94% 62%;
+      }
+    }
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -83,16 +106,11 @@
   }
 }
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 @media (prefers-color-scheme: dark) {
-
   ::-webkit-scrollbar {
     width: 10px;
     /* Largura da barra de rolagem */
@@ -100,7 +118,7 @@
 
   /* Estilizando o thumb (botão de rolagem) */
   ::-webkit-scrollbar-thumb {
-    background-color: #6B7280;
+    background-color: #6b7280;
     /* Cor do thumb */
     border-radius: 20px;
     /* Borda arredondada do thumb */
@@ -108,7 +126,7 @@
 
   /* Estilizando a área onde o thumb se move */
   ::-webkit-scrollbar-track {
-    background-color: #4B5563;
+    background-color: #4b5563;
     /* Cor da área de rolagem */
   }
 
@@ -118,18 +136,15 @@
 }
 
 .bgsvg {
-
   background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* CSS */
 
 .bgsvg2 {
-
   /* Cor de fundo do bgsvg */
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
-
 
 /* RainEffect.css */
 /* RainEffect.css */
@@ -169,37 +184,35 @@
 /* Desaparecimento suave */
 @keyframes opacity-fade {
   0% {
-    opacity: .75;
+    opacity: 0.75;
   }
 
   100% {
     opacity: 0;
   }
-
 }
 
 .opacity-fade {
   animation: cubic-bezier(0.19, 1, 0.22, 1) 0.5s opacity-fade;
 }
 
-
-
 /* SeuComponente.css */
 
 .glow:hover {
   background-color: #fca311;
   box-shadow: 0 0 10px rgba(252, 163, 17, 0.8);
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition:
+    background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .cards__card.glow:hover {
   background-color: #fca311;
   box-shadow: 0 0 10px rgba(252, 163, 17, 0.8);
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition:
+    background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
-
-
-
 
 .periodic-table {
   display: grid;
@@ -213,7 +226,6 @@
 }
 
 .element {
-
   border: 2px solid #aaa;
   display: flex;
   position: relative;
@@ -228,7 +240,6 @@
   transition: ease-in-out;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 300ms;
-
 }
 
 .element .number {
@@ -248,11 +259,9 @@
 .periodictableheading {
   text-align: center;
   padding: 35px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 50px;
 }
-
-
 
 /* styles.css */
 
@@ -261,46 +270,41 @@
 
 /* Classe para estilizar o componente de barra de progresso circular */
 
-
-
-
-
 .chatresponse h1 {
-  @apply text-2xl font-bold my-4 mb-4;
+  @apply my-4 mb-4 text-2xl font-bold;
 }
 
 .chatresponse h2 {
-  @apply text-xl font-semibold my-4 mb-4;
+  @apply my-4 mb-4 text-xl font-semibold;
 }
 
 .chatresponse h3 {
-  @apply text-lg font-semibold my-4 mb-4;
+  @apply my-4 mb-4 text-lg font-semibold;
 }
 
 .chatresponse h4 {
-  @apply text-base font-semibold my-4 mb-4;
+  @apply my-4 mb-4 text-base font-semibold;
 }
 
 .chatresponse h5 {
-  @apply text-sm font-semibold my-4 mb-4;
+  @apply my-4 mb-4 text-sm font-semibold;
 }
 
 .chatresponse h6 {
-  @apply text-xs font-semibold my-4 mb-4;
+  @apply my-4 mb-4 text-xs font-semibold;
 }
 
 /* Estilos para listas não ordenadas (ul) e itens de lista (li) usando Tailwind CSS classes */
 .chatresponse ul {
-  @apply list-disc list-inside my-4 mr-2;
-
+  @apply my-4 mr-2 list-inside list-disc;
 }
 
 .chatresponse li {
-  @apply ml-8 mt-0 mb-2;
+  @apply mb-2 ml-8 mt-0;
 }
 
 .chatresponse img {
-  @apply mx-auto rounded-md my-4;
+  @apply mx-auto my-4 rounded-md;
 }
 
 .chatresponse p {
@@ -308,7 +312,7 @@
 }
 
 .chatresponse strong {
-  @apply bg-white/25 border border-white/50 rounded-sm font-bold px-1;
+  @apply rounded-sm border border-white/50 bg-white/25 px-1 font-bold;
 }
 
 .chatresponse u {
@@ -316,21 +320,21 @@
 }
 
 ::selection {
-  @apply bg-red-400/50
+  @apply bg-red-400/50;
 }
 
 .chatresponse blockquote {
-  @apply ml-4 my-4 italic underline decoration-white underline-offset-8 p-4 bg-white/10 border border-white/25 rounded-md w-fit
+  @apply my-4 ml-4 w-fit rounded-md border border-white/25 bg-white/10 p-4 italic underline decoration-white underline-offset-8;
 }
 
 .chatresponse a {
-  @apply text-blue-400 hover:underline
+  @apply text-blue-400 hover:underline;
 }
 
 .chatresponse p {
-  @apply my-4 text-justify
+  @apply my-4 text-justify;
 }
 
 .chatresponse ol {
-  @apply list-inside my-4 mr-2
+  @apply my-4 mr-2 list-inside;
 }

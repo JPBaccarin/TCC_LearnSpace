@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/utils/theme-provider";
 import Footer from "@/components/ui/footer";
+import NextAuthSessionProvider from "@/providers/sessionProvider";
 const inter = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,10 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className} >
+      <body className={inter.className}>
         {" "}
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
           <Footer />
         </ThemeProvider>
       </body>
