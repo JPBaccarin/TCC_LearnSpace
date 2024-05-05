@@ -1,9 +1,8 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import axios from "axios";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,14 +14,16 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
-import React, { SyntheticEvent, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import React from "react";
 import Link from "next/link";
 
 const formSchema = z.object({
-  email: z.string().min(1, {
+  nome: z.string().min(1, {
+    message: "O campo é obrigatório.",
+  }),
+  email: z.string().email().min(1, {
     message: "O campo é obrigatório.",
   }),
   password: z.string().min(1, {
@@ -32,23 +33,34 @@ const formSchema = z.object({
     message: "O campo é obrigatório.",
   }),
 });
-
 export function Cadform() {
   const router = useRouter();
-
-  // 1. Define your form.
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
+    defaultValues: {},
   });
-
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    axios
+      .post("http://localhost:3002/signup", values)
+      .then((response) => {
+        console.log("Dados enviados com sucesso:", response.data);
+        // Adicione aqui lógica adicional após o envio bem-sucedido
+        toast({
+          title: "Cadastrado com Sucesso!",
+          description: "Você foi cadastrado com sucesso.",
+        });
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar dados do formulário:", error);
+        // Adicione aqui tratamento de erro, se necessário
+        toast({
+          title: "Erro!",
+          description: "Não foi possível efetuar o cadastro. Tente novamente.",
+          variant: "destructive",
+        });
+      });
+
     console.log(values);
   }
 
@@ -56,8 +68,24 @@ export function Cadform() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="  space-y-4 rounded-md border p-4"
+        className="  space-y-4 rounded-md border p-4 sm:w-2/3 "
       >
+        <FormField
+          control={form.control}
+          name="nome"
+          render={({ field }) => (
+            <FormItem>
+              <FormItem>
+                <FormLabel>Nome</FormLabel>
+                <FormControl>
+                  <Input placeholder="digite seu nome" type="text" {...field} />
+                </FormControl>
+                <FormDescription>Digite seu nome.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="email"
@@ -66,7 +94,7 @@ export function Cadform() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="email" type="text" {...field} />
+                  <Input placeholder="email" type="email" {...field} />
                 </FormControl>
                 <FormDescription>Digite seu email.</FormDescription>
                 <FormMessage />
@@ -97,21 +125,23 @@ export function Cadform() {
           render={({ field }) => (
             <FormItem>
               <FormItem>
-                <FormLabel>Senha</FormLabel>
+                <FormLabel>Data de Nascimento</FormLabel>
                 <FormControl>
-                  <Input  type="date" {...field} />
+                  <Input type="date" {...field} />
                 </FormControl>
-                <FormDescription>Digite sua senha.</FormDescription>
+                <FormDescription>
+                  Digite sua data de nascimento.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             </FormItem>
           )}
         />
         <div className="space-y-4">
-          <Button type="submit">entrar</Button>{" "}
+          <Button type="submit">cadastrar</Button>{" "}
           <div className="flex flex-row text-sm text-muted-foreground">
             <p className="mr-2 ">já possui uma conta?</p>
-            <Link href={"//"} className="text-sm text-primary/50 underline">
+            <Link href={"/login"} className="text-sm text-primary/50 underline">
               {" "}
               log-in
             </Link>

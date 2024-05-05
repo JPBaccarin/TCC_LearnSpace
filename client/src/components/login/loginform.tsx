@@ -1,9 +1,8 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,11 +14,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
-
-import React, { SyntheticEvent, useState } from "react";
+import React from "react";
 import Link from "next/link";
+import axios from "axios";
 
 const formSchema = z.object({
   email: z.string().min(1, {
@@ -29,11 +26,9 @@ const formSchema = z.object({
     message: "O campo é obrigatório.",
   }),
 });
-
 export function Loginform() {
-  const router = useRouter();
+  const { toast } = useToast();
 
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,11 +37,24 @@ export function Loginform() {
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await axios.post("http://localhost:3002/login", values);
+      const { token, papel } = response.data;
+      console.log(response.data);
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", papel);
+      toast({
+        title: "Login efetuado com sucesso",
+        description: "Você será redirecionado para a página principal.",
+      });
+    } catch (error) {
+      toast({
+        title: "Erro ao efetuar login",
+        description: "Verifique suas credenciais e tente novamente.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
@@ -89,10 +97,15 @@ export function Loginform() {
           )}
         />
         <div className="space-y-4">
-          <Button type="submit">entrar</Button>{" "}
+          <Button type="submit" className="w-full">
+            entrar
+          </Button>{" "}
           <div className="flex flex-row text-sm text-muted-foreground">
             <p className="mr-2 ">não possui uma conta?</p>
-            <Link href={"//"} className="text-sm text-primary/50 underline">
+            <Link
+              href={"/login/cadastro"}
+              className="text-sm text-primary/50 underline"
+            >
               {" "}
               cadastre-se
             </Link>

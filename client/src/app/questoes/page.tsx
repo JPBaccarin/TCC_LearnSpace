@@ -3,7 +3,8 @@ import FilterQ from "@/components/questoes/filter";
 import React from "react";
 import Questoes from "@/components/questoes/questoes";
 
-export default function () {
+
+const Page = () => {
   const handleFilterChange = (filters: any) => {
     // Lógica para lidar com a mudança de filtro
     console.log("Filters changed:", filters);
@@ -12,24 +13,23 @@ export default function () {
   const questionData = [
     {
       id: 1,
-      enunciado:
-        " Os recursos usados nesse pôster de divulgação de uma campanha levam o leitor a refletir sobre a necessidade de:",
+      enunciado: " Os recursos usados nesse pôster de divulgação de uma campanha levam o leitor a refletir sobre a necessidade de:",
       opcoes_resposta: [
         "A  criticar o tipo de tratamento dado à mulher.",
         "B  rever o desempenho da mulher no trabalho.",
-        "C  questionar a sobrecarga de atribuições da mulher.",
-        "D  analisar as pesquisas acerca dos direitos da mulher.",
-        "E  censurar a mulher pelo uso de determinadas palavras.",
+        // ...
       ],
-      resposta_correta: "A  ",
-      categoria: "Desconhecido",
-      vestibular: "ENEM",
-      disciplina: "matemática",
-      conteudo: "lógica", // Adicionando a propriedade "conteudo"
-      tópico: "",
-      dificuldade: "fácil",
-      ano: "2002",
+      resposta_correta: "A", // Add the correct answer
+      vestibular: "ENEM", // Add the vestibular
+      disciplina: "Portuguese", // Add the discipline
+      conteudo: "Grammar", // Add the content
+      dificuldade: "Medium", // Add the difficulty
+      ano: "2021", // Add the year
+      // Optional properties
+      categoria: "Language", // Add the category if available
+      topico: "Gender issues", // Add the topic if available
     },
+    // ...
   ];
 
   return (
@@ -38,4 +38,6 @@ export default function () {
       <Questoes question={questionData[0]} />
     </div>
   );
-}
+};
+
+export default Page;

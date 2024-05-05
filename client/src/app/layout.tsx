@@ -3,7 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/utils/theme-provider";
 import Footer from "@/components/ui/footer";
-import NextAuthSessionProvider from "@/providers/sessionProvider";
+
 const inter = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
+          {children}
           <Footer />
         </ThemeProvider>
       </body>
