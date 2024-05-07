@@ -41,7 +41,6 @@ export function Loginform() {
     try {
       const response = await axios.post("http://localhost:3002/login", values);
       const { token, papel } = response.data;
-      console.log(response.data);
       localStorage.setItem("token", token);
       localStorage.setItem("role", papel);
       toast({
