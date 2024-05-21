@@ -1,0 +1,5 @@
+pdfminer.six
+pip install pdfminer.six
+
+PyMuPDF
+pip install PyMuPDF
