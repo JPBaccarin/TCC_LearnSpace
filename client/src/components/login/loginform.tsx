@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import React from "react";
 import Link from "next/link";
 import axios from "axios";
-
+import { useRouter } from "next/navigation";
 const formSchema = z.object({
   email: z.string().min(1, {
     message: "O campo é obrigatório.",
@@ -28,7 +28,7 @@ const formSchema = z.object({
 });
 export function Loginform() {
   const { toast } = useToast();
-
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,6 +47,9 @@ export function Loginform() {
         title: "Login efetuado com sucesso",
         description: "Você será redirecionado para a página principal.",
       });
+
+
+      router.push("/");
     } catch (error) {
       toast({
         title: "Erro ao efetuar login",

@@ -3,10 +3,8 @@ import FilterQ from "@/components/questoes/filter";
 import React from "react";
 import Questoes from "@/components/questoes/questoes";
 
-
 const Page = () => {
   const handleFilterChange = (filters: any) => {
-    // Lógica para lidar com a mudança de filtro
     console.log("Filters changed:", filters);
   };
 
@@ -29,7 +27,22 @@ const Page = () => {
       categoria: "Language", // Add the category if available
       topico: "Gender issues", // Add the topic if available
     },
-    // ...
+    {
+      id: 2,
+      enunciado: "Qual é a capital do Brasil?",
+      opcoes_resposta: [
+        "A  São Paulo",
+        "B  Rio de Janeiro",
+        "C  Brasília",
+        "D  Salvador",
+      ],
+      resposta_correta: "C",
+      vestibular: "ENEM",
+      disciplina: "Geography",
+      conteudo: "Brazilian Capitals",
+      dificuldade: "Easy",
+      ano: "2021",
+    },
   ];
 
   return (
