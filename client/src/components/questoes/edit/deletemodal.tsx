@@ -47,11 +47,11 @@ export function DeleteModal({ open, setOpen, question, handleDelete }: ModalProp
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>Confirm Delete</DialogHeader>
+          <DialogHeader>Confirmar Exclusão</DialogHeader>
           <DialogDescription>
-            Are you sure you want to delete this item?
+            Tem certeza que deseja deletar esta questão?
           </DialogDescription>
-          <Button onClick={handleConfirmDelete}>Confirm Delete</Button>
+          <Button onClick={handleConfirmDelete}>Deletar</Button>
         </DialogContent>
       </Dialog>
     );

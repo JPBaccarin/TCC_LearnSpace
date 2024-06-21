@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import axios from "axios";
-import { Modal } from "./editmodal";
+import { EditModal } from "./editmodal";
 import { Eraser } from "lucide-react";
 import { DeleteModal } from "./deletemodal";
 // You can use a Zod schema here if you want.
@@ -60,16 +60,20 @@ export const columns: ColumnDef<Questoes>[] = [
         }
       };
 
-      const handleEdit = (event) => {
+      const handleEdit = (event: any) => {
         event.stopPropagation();
         setOpen(true);
       };
 
       return (
         <div className="flex gap-4">
-          
-          <DeleteModal open={openDelete} setOpen={setOpenDelete} question={question}></DeleteModal>
-          <Modal open={open} setOpen={setOpen} question={question} />
+          <DeleteModal
+            open={openDelete}
+            setOpen={setOpenDelete}
+            question={question}
+            handleDelete={() => handleDelete()}
+          />
+          <EditModal open={open} setOpen={setOpen} question={question} />
         </div>
       );
     },

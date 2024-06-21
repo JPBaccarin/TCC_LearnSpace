@@ -48,7 +48,6 @@ export function Loginform() {
         description: "Você será redirecionado para a página principal.",
       });
 
-
       router.push("/");
     } catch (error) {
       toast({

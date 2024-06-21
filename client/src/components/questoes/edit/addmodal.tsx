@@ -25,13 +25,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FilePenLine } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
-import GetImage from "./getimage";
 interface ModalProps {
   open: boolean;
   setOpen: (open: boolean) => void;
   question: any; // Replace 'any' with the type of your question
 }
-export function EditModal({ open, setOpen, question }: ModalProps) {
+export function AddModal({ open, setOpen, question }: ModalProps) {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   if (isDesktop) {
@@ -58,15 +57,15 @@ export function EditModal({ open, setOpen, question }: ModalProps) {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle>Editar Questão</DrawerTitle>
+          <DrawerTitle>Adicionar Questão</DrawerTitle>
           <DrawerDescription>
-            Altere a questão que deseja editar.
+            Adicione uma nova questão ao banco de dados.
           </DrawerDescription>
         </DrawerHeader>
         <QuestionsForm className="px-4" />
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button variant="outline">Cancelar</Button>
+            <Button variant="outline">Adicionar</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
@@ -78,7 +77,9 @@ function QuestionsForm({ className }: React.ComponentProps<"form">) {
     <form className={cn("grid grid-cols-2 gap-4", className)}>
       <div className="grid gap-2">
         <Label htmlFor="id">ID da Questão</Label>
-        <p className="text-sm text-muted-foreground ">id</p>
+        <p className="text-sm text-muted-foreground " >
+          id
+        </p>
       </div>
       <div className="col-span-2 grid gap-2">
         <Label htmlFor="enunciado">Enunciado</Label>

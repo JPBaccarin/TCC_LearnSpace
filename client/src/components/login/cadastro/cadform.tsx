@@ -68,7 +68,7 @@ export function Cadform() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="  space-y-4 rounded-md border p-4 sm:w-2/3 "
+        className="space-y-4 rounded-md border p-4 sm:w-1/4 "
       >
         <FormField
           control={form.control}
