@@ -19,13 +19,12 @@ const NavbarLandingPage: React.FC = () => {
                     <Image className=' h-10 w-10' src={learnspace} alt='' />
                     <p className=' text-red-600'>Learn</p><br></br>
                     <p>Space</p>
-
+                        
                 </div>
 
                 <div className="hidden md:flex space-x-4">
-                    <a href="../landingpage" className="text-white hover:text-gray-300">Página Inicial</a>
-                    <a href="landingpage/Sobre" className="text-white hover:text-gray-300">Sobre Nós</a>
-                    <a href="./Contato" className="text-white hover:text-gray-300">Contato</a>
+                    <a href="/" className="text-white hover:text-gray-300">Página Inicial</a>
+                    <a href="/sobre" className="text-white hover:text-gray-300">Sobre Nós</a>
                 </div>
 
                 <div className="md:hidden flex items-center">
@@ -37,9 +36,8 @@ const NavbarLandingPage: React.FC = () => {
 
             {isOpen && (
                 <div className="md:hidden bg-gray-500">
-                    <a href="landingpage" className="block py-2 px-4 text-white hover:bg-gray-600">Página Inicial</a>
-                    <a href="/Sobre" className="block py-2 px-4 text-white hover:bg-gray-600">Sobre Nós</a>
-                    <a href="/Contato" className="block py-2 px-4 text-white hover:bg-gray-600">Contato</a>
+                    <a href="/" className="block py-2 px-4 text-white hover:bg-gray-600">Página Inicial</a>
+                    <a href="/sobre" className="block py-2 px-4 text-white hover:bg-gray-600">Sobre Nós</a>
                 </div>
             )}
         </nav>

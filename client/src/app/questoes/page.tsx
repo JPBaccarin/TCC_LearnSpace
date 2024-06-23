@@ -11,21 +11,17 @@ const Page = () => {
   const questionData = [
     {
       id: 1,
-      enunciado: " Os recursos usados nesse pôster de divulgação de uma campanha levam o leitor a refletir sobre a necessidade de:",
-      opcoes_resposta: [
-        "A  criticar o tipo de tratamento dado à mulher.",
-        "B  rever o desempenho da mulher no trabalho.",
-        // ...
-      ],
-      resposta_correta: "A", // Add the correct answer
+      enunciado:
+        "(Enem) Jogar baralho é uma atividade que estimula o raciocínio. Um jogo tradicional é a Paciência, que utiliza 52 cartas. Inicialmente são formadas sete colunas com as cartas. A primeira coluna tem uma carta, a segunda tem duas cartas, a terceira tem três cartas, a quarta tem quatro cartas, e assim sucessivamente até a sétima coluna, a qual tem sete cartas, e o que sobra forma o monte, que são as cartas não utilizadas nas colunas. A quantidade de cartas que forma o monte é",
+      opcoes_resposta: ["21.", "24.", "26.", "28.", "31."],
+      resposta_correta: 1, // Add the correct answer
       vestibular: "ENEM", // Add the vestibular
-      disciplina: "Portuguese", // Add the discipline
-      conteudo: "Grammar", // Add the content
-      dificuldade: "Medium", // Add the difficulty
+      disciplina: "Matemática", // Add the discipline
+      conteudo: "lógica", // Add the content
+      dificuldade: "Media", // Add the difficulty
       ano: "2021", // Add the year
-      // Optional properties
-      categoria: "Language", // Add the category if available
-      topico: "Gender issues", // Add the topic if available
+      categoria: "", // Add the category if available
+      topico: "", // Add the topic if available
     },
     {
       id: 2,
@@ -46,8 +42,8 @@ const Page = () => {
   ];
 
   return (
-    <div className="bgsvg flex h-screen flex-col items-center justify-center gap-5">
-      <FilterQ onFilterChange={handleFilterChange} />
+    <div className="bgsvg flex min-h-screen  flex-col gap-5 p-10">
+      <FilterQ />
       <Questoes question={questionData[0]} />
     </div>
   );
