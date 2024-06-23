@@ -104,7 +104,7 @@ export function Loginform() {
           <div className="flex flex-row text-sm text-muted-foreground">
             <p className="mr-2 ">não possui uma conta?</p>
             <Link
-              href={"/login/cadastro"}
+              href={"/cadastro"}
               className="text-sm text-primary/50 underline"
             >
               {" "}

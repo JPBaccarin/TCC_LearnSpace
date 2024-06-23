@@ -14,7 +14,6 @@ const NavbarLandingPage: React.FC = () => {
     <nav className="sticky top-0 z-50 p-4 shadow-sm backdrop-blur-sm bg-background/20 border-b ">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex flex-row items-center font-bold text-foreground ">
-          {/* Use o componente Image para renderizar a imagem */}
           <Image className=" h-10 w-10" src={learnspace} alt="" />
           <p className=" text-primary">Learn</p>
           <br></br>

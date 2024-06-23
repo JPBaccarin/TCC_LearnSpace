@@ -8,7 +8,7 @@ import React from "react";
 
 function Chatp() {
   return (
-    <div className="p-2 flex items-center justify-center h-full bgsvg bg-gray-900 min-h-screen bgsvg text-justify">
+    <div className="p-2 flex items-center justify-center h-full bgsvg bg-background min-h-screen bgsvg text-justify">
       <Chat />
     </div>
   );

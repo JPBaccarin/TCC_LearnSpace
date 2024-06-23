@@ -2,6 +2,7 @@
 import FilterQ from "@/components/questoes/filter";
 import React from "react";
 import Questoes from "@/components/questoes/questoes";
+import MainSidebar from "@/components/main/sidebar";
 
 const Page = () => {
   const handleFilterChange = (filters: any) => {
@@ -43,6 +44,7 @@ const Page = () => {
 
   return (
     <div className="bgsvg flex min-h-screen  flex-col gap-5 p-10">
+      <MainSidebar />
       <FilterQ />
       <Questoes question={questionData[0]} />
     </div>
