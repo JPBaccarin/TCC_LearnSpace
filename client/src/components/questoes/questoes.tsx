@@ -20,7 +20,7 @@ interface QuestionProps {
 
 const Questoes: FC<QuestionProps> = ({ question }) => {
   return (
-    <div className="rounded-lg border">
+    <div className="rounded-lg border dark: bg-background">
       <div className="border-b p-4 pb-2">
         <h3 className="mb-2 text-lg font-bold">{question.id}</h3>
         <div className="flex flex-wrap justify-between">

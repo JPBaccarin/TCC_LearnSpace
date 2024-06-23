@@ -166,7 +166,7 @@ const MultiSelectorTrigger = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "flex flex-wrap gap-1 rounded-lg border border-muted bg-background p-1 py-2",
+        "flex flex-wrap gap-1 rounded-lg border border-input bg-background p-1 py-2",
         className,
       )}
       {...props}
@@ -176,7 +176,7 @@ const MultiSelectorTrigger = forwardRef<
           key={item}
           className={cn(
             "flex items-center gap-1 rounded-xl px-1",
-            activeIndex === index && "ring-2 ring-muted-foreground ",
+            activeIndex === index && "ring-2 ring-input-foreground ",
           )}
           variant={"secondary"}
         >
@@ -216,7 +216,7 @@ const MultiSelectorInput = forwardRef<
       onFocus={() => setOpen(true)}
       onClick={() => setActiveIndex(-1)}
       className={cn(
-        "ml-2 flex-1 bg-transparent outline-none placeholder:text-muted-foreground",
+        "ml-2 flex-1 bg-transparent outline-none placeholder:text-input-foreground",
         className,
         activeIndex !== -1 && "caret-transparent",
       )}
@@ -248,13 +248,13 @@ const MultiSelectorList = forwardRef<
     <CommandList
       ref={ref}
       className={cn(
-        "scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted-foreground dark:scrollbar-thumb-muted scrollbar-thumb-rounded-lg absolute top-0 z-10 flex w-full flex-col gap-2 rounded-md border border-muted bg-background p-2 shadow-md transition-colors",
+        "scrollbar-thin scrollbar-track-transparent scrollbar-thumb-input-foreground dark:scrollbar-thumb-input scrollbar-thumb-rounded-lg absolute top-0 z-10 flex w-full flex-col gap-2 rounded-md border border-input bg-background p-2 shadow-md transition-colors",
         className,
       )}
     >
       {children}
       <CommandEmpty>
-        <span className="text-muted-foreground">No results found</span>
+        <span className="text-input-foreground">No results found</span>
       </CommandEmpty>
     </CommandList>
   );

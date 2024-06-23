@@ -32,10 +32,10 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="transition- relative flex h-screen max-h-[600px] flex-col items-center justify-center overflow-hidden bg-gray-900 text-white duration-150">
+    <section className="transition- relative flex h-screen max-h-[600px] flex-col items-center justify-center overflow-hidden bg-background text-foreground duration-150">
       <div className="rain-container"></div>
       <motion.div
-        className="z-10 flex flex-col items-center rounded-xl bg-gray-900/75 p-6 text-center backdrop-blur-sm"
+        className="z-10 flex flex-col items-center rounded-xl bg-background/75 p-6 text-center backdrop-blur-sm"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
         </motion.p>
         <motion.a
           href="./login/cadastro"
-          className="rounded-full bg-white px-6 py-2 text-base text-blue-500 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white sm:text-lg"
+          className="rounded-full bg-white px-6 py-2 text-base text-blue-500 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-foreground sm:text-lg"
           whileHover={{ scale: 1.1 }}
         >
           Comece Agora

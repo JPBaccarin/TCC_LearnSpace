@@ -10,10 +10,10 @@ const ResolucaoDoSite: React.FC = () => {
 
 
     return (
-        <div className="flex flex-col items-center bg-gray-900 text-white sm:m-0 mx-2 text-sm sm:text-base">
+        <div className="flex flex-col items-center bg-background text-foreground sm:m-0 mx-2 text-sm sm:text-base">
             <div className="mt-4">
                 <motion.div
-                    className={`w-screen max-w-[1200px] p-6 bg-gray-800/50 rounded-lg flex content-around justify-around gap-2 flex-col`}
+                    className={`w-screen max-w-[1200px] p-6 bg-foreground/5 rounded-lg flex content-around justify-around gap-2 flex-col`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}

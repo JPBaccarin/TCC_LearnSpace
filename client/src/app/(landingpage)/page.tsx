@@ -9,7 +9,7 @@ import Porque from "@/components/index/problema/problema";
 
 const page: React.FC = () => {
   return (
-    <div className="bg-gray-900 ">
+    <div className="bg-gray-background ">
       <NavbarLandingPage />
       <Hero />
       <div className="flex flex-col gap-10">

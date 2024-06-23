@@ -45,15 +45,15 @@ const Funcionalidades: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center bg-gray-900 text-white sm:m-0 mx-2 text-sm sm:text-base">
+        <div className="flex flex-col items-center bg-background text-foreground sm:m-0 mx-2 text-sm sm:text-base">
             <h1 className='text-4xl font-bold my-4'>Principais Funcionalidades</h1>
             <div className="flex">
                 {navbarItems.map((item) => (
                     <button
                         key={item.title}
                         onClick={() => handleItemClick(item)}
-                        className={`${selectedItem === item ? 'text-blue-500' : 'bg-gray-800'
-                            } text-white p-2 rounded-md m-2`}
+                        className={`${selectedItem === item ? 'text-blue-500' : 'bg-foreground/5'
+                            } text-foreground p-2 rounded-md m-2`}
                     >
                         {item.title}
                     </button>
@@ -67,7 +67,7 @@ const Funcionalidades: React.FC = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
-                        <div className="w-screen max-w-[1200px] flex-col sm:flex-row p-6 bg-gray-800/50 rounded-lg flex content-around justify-around gap-2">
+                        <div className="w-screen max-w-[1200px] flex-col sm:flex-row p-6 bg-foreground/5 rounded-lg flex content-around justify-around gap-2">
                             <div className="w-2/3">
                                 <motion.div className="w-5/6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                                     <section>

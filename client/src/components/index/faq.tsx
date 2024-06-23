@@ -47,7 +47,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-900 text-white py-8">
+    <section className="bg-background text-foreground py-8">
       <Accordion type="single" collapsible className="container">
         {faqData.map((item, index) => (
           <AccordionItem key={index} value={`item-${index}`} onChange={() => toggleQuestion(index)}>
