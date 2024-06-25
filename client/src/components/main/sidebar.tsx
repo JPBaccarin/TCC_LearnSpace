@@ -17,7 +17,7 @@ const menuItems = [
   { icon: Home, label: "Home", href: "/main" },
   { icon: BookOpen, label: "Questões", href: "/main/questoes" },
   { icon: PenTool, label: "Redações", href: "/main/chat" },
-  { icon: Calendar, label: "Calendário", href: "/main/calendario" },
+  { icon: Calendar, label: "Cronograma", href: "/main/cronograma" },
   { icon: Mic, label: "Speech", href: "/main/speech" },
   { icon: LayoutDashboard, label: "Dashboard", href: "/main/dashboard" },
 ];
