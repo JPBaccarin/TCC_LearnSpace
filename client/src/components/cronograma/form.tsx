@@ -10,7 +10,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 function FormCronograma() {
   return (
@@ -45,25 +45,23 @@ function FormCronograma() {
         <div className="appearance-none">
           <p>Tipo de Cronograma</p>
           <Select>
-      <SelectTrigger className="">
-        <SelectValue placeholder="Selecione um Cronograma " />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Cronogramas</SelectLabel>
-          <SelectItem value="Teste1">Teste1</SelectItem>
-          <SelectItem value="Teste2">Teste2</SelectItem>
-          <SelectItem value="Teste3">Teste3</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-
+            <SelectTrigger className="">
+              <SelectValue placeholder="Selecione um Cronograma " />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Cronogramas</SelectLabel>
+                <SelectItem value="Teste1">Teste1</SelectItem>
+                <SelectItem value="Teste2">Teste2</SelectItem>
+                <SelectItem value="Teste3">Teste3</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
       <div className="pt-10">
         <p>Dias de Estudo</p>
-
       </div>
     </form>
   );

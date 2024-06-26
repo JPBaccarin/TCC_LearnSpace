@@ -19,7 +19,7 @@ const lessons = [
 
 function ModulePlan() {
   return (
-    <div className="flex  w-[440px] flex-col rounded-lg border p-4">
+    <div className="flex m-4  w-[440px] flex-col rounded-lg border p-4">
       <h3 className="text-xl font-bold">Conteúdo do módulo</h3>
       <div>
         <Accordion type="single" collapsible>
