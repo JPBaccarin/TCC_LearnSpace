@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { DatePickerWithPresets } from "../ui/datePickerTime";
 import Title from "./title";
@@ -11,14 +12,33 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import MultiSelector, { Option } from "../ui/multi-selector";
+import {
+  MultiSelector,
+  MultiSelectorTrigger,
+  MultiSelectorInput,
+  MultiSelectorContent,
+  MultiSelectorList,
+  MultiSelectorItem,
+} from "../ui/multi-selector";
+
+const options = [
+  { label: "Segunda", value: "Segunda" },
+  { label: "Terça", value: "Terça" },
+  { label: "Quarta", value: "Quarta" },
+  { label: "Quinta", value: "Quinta" },
+  { label: "Sexta", value: "Sexta" },
+  { label: "Sábado", value: "Sábado" },
+  { label: "Domingo", value: "Domingo" },
+];
 
 function FormCronograma() {
+  const [value, setValue] = useState<string[]>([]);
+
   return (
-    <form className="mb-4 grid w-[1000px] grid-cols-2 gap-8 rounded bg-accent px-8 pb-8 pt-6 shadow-md">
+    <form className="mb-4 grid grid-cols-2 gap-8 rounded border-l bg-accent border-primary px-8 pb-8 pt-6 shadow-md">
       <div className="">
         <Title name="Informações do Plano" />
-        <div className=" ">
+        <div className="">
           <p>Nome do Plano</p>
           <Input />
         </div>
@@ -63,41 +83,25 @@ function FormCronograma() {
 
       <div className="pt-10">
         <p>Dias de Estudo</p>
-        
+        <div>
+          <MultiSelector values={value} onValuesChange={setValue} loop={false}>
+            <MultiSelectorTrigger>
+              <MultiSelectorInput placeholder="" />
+            </MultiSelectorTrigger>
+            <MultiSelectorContent>
+              <MultiSelectorList>
+                {options.map((option, i) => (
+                  <MultiSelectorItem key={i} value={option.value}>
+                    {option.label}
+                  </MultiSelectorItem>
+                ))}
+              </MultiSelectorList>
+            </MultiSelectorContent>
+          </MultiSelector>
+        </div>
       </div>
     </form>
   );
 }
-
-
-
-const OPTIONS: Option[] = [
-  { label: 'nextjs', value: 'Nextjs' },
-  { label: 'React', value: 'react' },
-  { label: 'Remix', value: 'remix' },
-  { label: 'Vite', value: 'vite' },
-  { label: 'Nuxt', value: 'nuxt' },
-  { label: 'Vue', value: 'vue' },
-  { label: 'Svelte', value: 'svelte' },
-  { label: 'Angular', value: 'angular' },
-  { label: 'Ember', value: 'ember', disable: true },
-  { label: 'Gatsby', value: 'gatsby', disable: true },
-  { label: 'Astro', value: 'astro' },
-];
-
-    <div className="w-full px-10">
-      <MultiSelector
-        value={OPTIONS.slice(0, 3)}
-        defaultOptions={OPTIONS}
-        disabled
-        hidePlaceholderWhenSelected
-        placeholder="Select frameworks you like..."
-        emptyIndicator={
-          <p className="text-center text-lg leading-10 text-gray-600 dark:text-gray-400">
-            no results found.
-          </p>
-        }
-      />
-    </div>
 
 export default FormCronograma;

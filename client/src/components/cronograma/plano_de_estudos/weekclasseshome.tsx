@@ -30,9 +30,9 @@ function WeekClassesHome() {
     // Adicione mais matérias conforme necessário
   ];
   return (
-    <div className="m-4 w-full ">
+    <div className="m-4 w-full  ">
       <Dialog>
-        <DialogTrigger className="mt-4 w-full  space-y-4 text-left ">
+        <DialogTrigger className= "w-full  space-y-4 text-left ">
           {materias.map((materia, index) => (
             <div
               key={index}

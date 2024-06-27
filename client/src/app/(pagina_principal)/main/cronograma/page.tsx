@@ -8,9 +8,10 @@ function Cronograma() {
       <MainSidebar />
       <div className="flex flex-row ">
         <div className="w-1/6"></div>
-        <div className="m-4">
+        <div className="m-4 w-screen">
           <FormCronograma />
         </div>
+        <div className="w-1/6"></div>
       </div>
     </div>
   );

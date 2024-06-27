@@ -11,10 +11,12 @@ import {
   LayoutDashboard,
   Menu,
   X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 const menuItems = [
-  { icon: Home, label: "Home", href: "/main" },
+  { icon: Home, label: "Home", href: "/main/home" },
   { icon: BookOpen, label: "Questões", href: "/main/questoes" },
   { icon: PenTool, label: "Redações", href: "/main/chat" },
   { icon: Calendar, label: "Cronograma", href: "/main/cronograma" },
@@ -33,9 +35,17 @@ const MainSidebar = () => {
     <>
       <button
         onClick={toggleSidebar}
-        className="fixed left-4 top-4 z-50 rounded-md border bg-background p-2 text-foreground shadow-lg"
+        className={
+          isOpen
+            ? "fixed left-4 top-4 z-50 rounded-md border bg-secondary p-2"
+            : "fixed top-1/2 z-50 -translate-x-2 -translate-y-1/2 transform rounded-r-full border bg-secondary p-2 text-foreground shadow-lg   transition-transform "
+        }
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {isOpen ? (
+          <Menu className="h-6 w-6" />
+        ) : (
+          <ChevronRight className="h-6 w-6 " />
+        )}
       </button>
       <div
         className={`fixed inset-0 z-40 flex ${isOpen ? "translate-x-0" : "-translate-x-full"} transform transition-transform duration-300`}
