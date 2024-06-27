@@ -1,54 +1,49 @@
 import React from "react";
-import { BrainCog } from "lucide-react";
+import { Bot, BrainCog, MicOffIcon } from "lucide-react";
 import { Mic } from "lucide-react";
 import Image from "next/image";
-function Chat() {
-  return (
-    <div className="flex justify-center ">
-      <div className="h-screen w-3/4 rounded-lg bg-gray-700 shadow-md">
-        <div className="flex justify-center rounded bg-gray-600 p-4  text-2xl font-bold">
-          <h1>Chat de conversação</h1>
-        </div>
-        <div className="flex flex-col gap-4 p-4">
-          <div className="m-1 flex flex-row items-center gap-2 p-2">
-            <Image
-              src="/favicon.ico"
-              width="48"
-              height="48"
-              alt=""
-              className="rounded-full"
-            />
-            <p className="rounded bg-gray-500 p-2">Hello, how are you?</p>
-          </div>
+import faviconlogo from "@/app/favicon.ico";
+import { Button } from "../ui/button";
 
-          <div className="m-1 flex flex-row items-center justify-end gap-2 p-2">
-            <p className="rounded bg-blue-500 p-2 text-white">
-              I'm good, thanks!
-            </p>
+function ConversationChat() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background">
+      <div className="flex flex-row justify-between gap-4 w-full  rounded-md border p-4">
+        <div className="flex flex-col items-center">
+          <div className="rounded-full bg-secondary p-4">
             <Image
               src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"
-              width="48"
-              height="48"
-              alt=""
+              width={108}
+              height={108}
+              alt="Disable Microphone"
               className="rounded-full"
             />
           </div>
-          <div className="flex justify-start">
-            <div className="m-1 flex flex-row items-center gap-2 p-2">
-              <Image
-                src="/favicon.ico"
-                width="48"
-                height="48"
-                alt=""
-                className="rounded-full"
-              />
-              <p className="rounded bg-gray-500 p-2">What's up?</p>
-            </div>
+          <div className="flex flex-row items-center gap-2">
+            <Button className=" border bg-secondary ">apertar pra falar</Button>
           </div>
         </div>
-        <div className="absolute inset-x-0 bottom-0 flex justify-center gap-4 p-2 ">
-          <div className="flex justify-center rounded-full bg-blue-500 p-4">
-            <Mic />
+        <div className="flex flex-col items-center">
+          <div className="rounded-full bg-primary p-4">
+            <Image
+              src={faviconlogo}
+              width={108}
+              height={108}
+              alt="Disable Microphone"
+            />
+          </div>
+          <div className="items my-2 flex flex-row gap-2">
+            <p className="">LearnSpaceAI</p>
+            <Bot height={24} />
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full max-w-md rounded-lg bg-gray-800 p-4">
+        <div className="mb-2 text-xl font-bold">Feedback</div>
+        <div className="flex items-center space-x-2">
+          <div className="text-red-500">
+            Tente Melhorar a Pronúncia envolvendo palavras com a letra "R"
           </div>
         </div>
       </div>
@@ -56,4 +51,4 @@ function Chat() {
   );
 }
 
-export default Chat;
+export default ConversationChat;

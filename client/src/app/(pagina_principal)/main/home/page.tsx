@@ -1,3 +1,4 @@
+'use client'
 import WeekClassesHome from "@/components/cronograma/plano_de_estudos/weekclasseshome";
 import OtherFeatures from "@/components/dashboard/other_features";
 import QuestionChart from "@/components/dashboard/questionchart";

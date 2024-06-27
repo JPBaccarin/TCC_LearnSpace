@@ -1,6 +1,6 @@
 import React from "react";
 import MainSidebar from "@/components/main/sidebar";
-import Chat from "@/components/speech/conversationchat";
+import ConversationChat from "@/components/speech/conversationchat";
 
 function Speaking() {
   return (
@@ -8,7 +8,7 @@ function Speaking() {
       <MainSidebar />
 
       <div className="m-4">
-        <Chat />
+        <ConversationChat />
       </div>
     </div>
   );

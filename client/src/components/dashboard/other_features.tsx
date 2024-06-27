@@ -1,12 +1,5 @@
 import Link from "next/link";
-import {
-  Home,
-  BookOpen,
-  PenTool,
-  Calendar,
-  Mic,
-  LayoutDashboard,
-} from "lucide-react";
+import { Home, PenTool, Calendar, Mic } from "lucide-react";
 
 const routes = [
   {
@@ -24,36 +17,32 @@ const routes = [
   {
     icon: PenTool,
     name: "Redações",
-    path: "/speech",
+    path: "/redacoes",
     description: "Corrija suas redações em minutos com nossa IA.",
   },
   {
     icon: Calendar,
     name: "Cronograma",
-    path: "/speech",
+    path: "/cronograma",
     description: "Veja seu cronograma detalhadamente.",
   },
-  // Add more routes as needed
 ];
 
 const OtherFeatures = () => {
   return (
-    <div className=" m-2 rounded-md border bg-background p-3">
-      <h3 className="mx-4  text-xl font-bold mt-1">Outras funcionalidades:</h3>
+    <div className="m-2 rounded-md border bg-gray-800 p-2">
+      <h3 className="mx-4 mt-1 text-xl font-bold">Outras funcionalidades:</h3>
       <div className="flex flex-wrap">
         {routes.map((route) => (
-          <div
-            key={route.path}
-            className="w-full p-4 sm:w-1/2 md:w-1/3 lg:w-1/4"
-          >
+          <div key={route.path} className="w-full p-2 sm:w-1/2 md:w-1/3 lg:w-1/4">
             <Link href={route.path}>
-              <p className="block overflow-hidden rounded-lg border bg-background text-foreground shadow-md hover:scale-105  hover:border-primary transition hover:bg-black/10 hover:shadow-xl">
+              <div className="block overflow-hidden rounded-lg border h-full text-white shadow-md transition hover:scale-105 hover:border-primary hover:bg-gray-700 hover:shadow-xl">
                 <div className="p-4">
                   <route.icon className="h-12 w-12" />
                   <h4 className="mt-4 text-lg font-semibold">{route.name}</h4>
                   <p className="mt-2 text-sm">{route.description}</p>
                 </div>
-              </p>
+              </div>
             </Link>
           </div>
         ))}

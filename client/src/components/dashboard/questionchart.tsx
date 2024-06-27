@@ -9,7 +9,7 @@ function QuestionChart() {
     datasets: [
       {
         label: "Média da semana",
-        data: [12, 5], // Substitua 12 por acertos e 5 por erros conforme seus dados
+        data: [37, 30], // Substitua pelos valores corretos
         backgroundColor: [
           "rgba(54, 162, 235, 0.2)", // Cor para acertos
           "rgba(255, 99, 132, 0.2)", // Cor para erros
@@ -26,22 +26,21 @@ function QuestionChart() {
   const options = {
     maintainAspectRatio: false,
     responsive: true,
-
     plugins: {
       legend: {
-        position: "top",
+        position: "center" as const,
       },
       title: {
         display: true,
-        text: "Média de erros e acertos da semana",
+        text: "Percentual de Acertos",
       },
     },
   };
 
   return (
-    <div className="rounded-lg border bg-background m-1">
-      <div className="h-full ">
-        <Doughnut data={data} options={options} className="p-4" />
+    <div className="rounded-lg border bg-gray-800 m-1">
+      <div className="h-full p-4">
+        <Doughnut data={data} options={options} />
       </div>
     </div>
   );
