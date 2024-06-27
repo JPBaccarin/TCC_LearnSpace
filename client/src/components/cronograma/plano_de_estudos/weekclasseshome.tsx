@@ -11,8 +11,6 @@ import {
 import ModulePlan from "./moduleplan";
 
 function WeekClassesHome() {
-  const days = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
-  const [selectedDay, setSelectedDay] = useState<string | null>(null);
   interface Materia {
     titulo: string;
     descricao: string;
@@ -32,7 +30,7 @@ function WeekClassesHome() {
     // Adicione mais matérias conforme necessário
   ];
   return (
-    <div className="m-4 ">
+    <div className="m-4 w-full ">
       <Dialog>
         <DialogTrigger className="mt-4 w-full  space-y-4 text-left ">
           {materias.map((materia, index) => (
