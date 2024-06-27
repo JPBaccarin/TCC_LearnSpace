@@ -5,46 +5,52 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Markdown from "react-markdown";
 
 const lessons = [
   {
-    title: "Aula de História",
-    conteudo:
-      "Aula de HistóriaAula de HistóriaAula de HistóriaAula de HistóriaAula de HistóriaAula de História",
+    title: "Video: conjuntos numéricos",
+    conteudo: "",
     watched: true,
   },
-  { title: "Aula de Matemática", conteudo: "teste", watched: false },
+  { title: "Atividades", conteudo: "atividades", watched: true },
+  { title: "Conteúdo Complementar", conteudo: "atividades", watched: true },
   // adicione mais aulas conforme necessário
 ];
 
 function ModulePlan() {
   return (
-    <div className="flex m-4  w-[440px] flex-col rounded-lg border p-4">
-      <h3 className="text-xl font-bold">Conteúdo do módulo</h3>
-      <div>
-        <Accordion type="single" collapsible>
-          {lessons.map((lesson, index) => (
-            <AccordionItem value={`item-${index + 1}`} key={index}>
-              <AccordionTrigger className="text- font-semibold">
-                {lesson.title}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="flex flex-row items-center gap-2">
-                  <span
-                    style={{
-                      width: "12px",
-                      height: "12px",
-                      borderRadius: "100%",
-                      backgroundColor: lesson.watched ? "green" : "red",
-                    }}
-                  ></span>
-                  <p>{lesson.conteudo}</p>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
+    <div>
+      <a href=""></a>
+      <Accordion type="single" collapsible>
+        {lessons.map((lesson, index) => (
+          <AccordionItem value={`item-${index + 1}`} key={index} className="">
+            <span
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "100%",
+              }}
+              className={lesson.watched ? "bg-green-500" : "bg-red-500"}
+            ></span>
+            <AccordionTrigger className="text- font-semibold text-foreground">
+              {lesson.title}
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="flex flex-row items-center gap-2 text-foreground">
+                <iframe
+                  width="360"
+                  height="215"
+                  src="https://www.youtube.com/embed/s5Xv1SIQnQE?si=CUKrqSpPlCbXTDlD"
+                  title="YouTube video player"
+                  
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                ></iframe>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
   );
 }

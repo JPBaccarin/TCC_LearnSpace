@@ -14,7 +14,7 @@ function StudyPlanHeader({
   );
 
   return (
-    <div className="m-4 h-fit w-2/4  rounded-lg border p-4">
+    <div className="m-4 h-fit w-2/4  rounded-lg border bg-background p-4">
       <div className="mb-4 flex flex-row items-baseline justify-between">
         <h1 className="font-bold text-foreground">Plano de Estudos</h1>
 
@@ -27,12 +27,13 @@ function StudyPlanHeader({
       </div>
 
       <div className="  shadow-lg">
-        <div className="mb-2 text-sm font-bold text-primary ">
-          Progresso: {porcentagemConcluida}%
+        <div className="mb-2 flex  flex-row text-sm text-foreground  ">
+          <p className="mr-1 text-foreground">Progresso Total:</p>{" "}
+          <strong className="font-semibold">{porcentagemConcluida}% </strong>
         </div>
         <div className="h-2.5 rounded-full bg-secondary">
           <div
-            className="h-2.5 rounded-full bg-primary"
+            className="h-2.5 rounded-full bg-blue-500"
             style={{ width: `${porcentagemConcluida}%` }}
           ></div>
         </div>
