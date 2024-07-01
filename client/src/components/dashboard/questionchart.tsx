@@ -11,12 +11,12 @@ function QuestionChart() {
         label: "Média da semana",
         data: [37, 30], // Substitua pelos valores corretos
         backgroundColor: [
-          "rgba(54, 162, 235, 0.2)", // Cor para acertos
-          "rgba(255, 99, 132, 0.2)", // Cor para erros
+          "rgba(255, 255, 255, 0.2)", // Cor para acertos
+          "rgba(255, 0, 0, 0.2)", // Cor para erros
         ],
         borderColor: [
-          "rgba(54, 162, 235, 1)", // Borda para acertos
-          "rgba(255, 99, 132, 1)", // Borda para erros
+          "rgba(255, 255, 255, 1)", // Borda para acertos
+          "rgba(255, 0, 0, 0.7)", // Borda para erros
         ],
         borderWidth: 1,
       },

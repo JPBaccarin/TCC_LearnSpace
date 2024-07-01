@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
         </motion.p>
         <motion.a
           href="./login/cadastro"
-          className="rounded-full bg-white px-6 py-2 text-base text-blue-500 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-foreground sm:text-lg"
+          className="rounded-full bg-red-500 px-6 py-2 text-base text-white transition duration-300 ease-in-out hover:bg-red-600 hover:text-foreground sm:text-lg"
           whileHover={{ scale: 1.1 }}
         >
           Comece Agora
